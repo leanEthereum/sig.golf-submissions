@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1030" role="img" aria-labelledby="title desc">
+<title id="title">Selected path through the 160-level binary hypertree</title>
+<desc id="desc">A tower of binary Merkle trees. The bottom tree authenticates a 16-byte secret preimage. Each of 159 upper trees authenticates the previous root with a 46-chain WOTS signature. Blue branches show the selected path; amber leaves are siblings supplied in the signature. The top root is the public key.</desc>
+<defs>
+  <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f7fafc"/><stop offset="1" stop-color="#eef5fb"/></linearGradient>
+  <linearGradient id="path" x2="1" y2="1"><stop stop-color="#59c7ef"/><stop offset="1" stop-color="#1d65b4"/></linearGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+  <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 1 1 L 9 5 L 1 9 Z" fill="#2c75bc"/></marker>
+</defs>
+<rect width="1200" height="1030" rx="20" fill="url(#bg)"/>
+<rect x="30" y="30" width="1140" height="970" rx="18" fill="#fff" stroke="#cadbea" stroke-width="2"/>
+<path d="M59 74h45" stroke="#2777be" stroke-width="5" stroke-linecap="round"/>
+<text x="60" y="120" class="title">One signature, one path through 160 trees</text>
+<text x="60" y="153" class="subtitle">A stateless binary hypertree · selected branches in blue · supplied siblings in amber</text>
+<line x1="60" y1="178" x2="1140" y2="178" stroke="#d2dfeb"/>
+<rect x="60" y="203" width="660" height="653" rx="14" fill="#f5f9fd" stroke="#d0e1ee"/>
+<text x="85" y="237" class="section">AUTHENTICATION PATH</text>
+<text x="85" y="260" class="hint">Read upward: dashed WOTS links sign a root into the tree above.</text>
+
+<path d="M405 319L318 378" fill="none" stroke="#2b78bd" stroke-width="5" opacity="1" stroke-linecap="round"/>
+<path d="M405 319L492 378" fill="none" stroke="#a8bac9" stroke-width="3" opacity="1" stroke-linecap="round"/>
+<path d="M405 319L318 378" fill="none" stroke="#61bff0" stroke-width="11" opacity="0.18" stroke-linecap="round"/>
+<circle cx="405" cy="319" r="13" fill="#1e69b1" stroke="#fff" stroke-width="2"/>
+<circle cx="318" cy="378" r="11" fill="#2b78bd" stroke="#fff" stroke-width="2"/>
+<circle cx="492" cy="378" r="11" fill="#d69a40" stroke="#fff" stroke-width="2"/>
+<text x="113" y="326" class="level">159</text>
+<path d="M405 455L492 514" fill="none" stroke="#2b78bd" stroke-width="5" opacity="1" stroke-linecap="round"/>
+<path d="M405 455L318 514" fill="none" stroke="#a8bac9" stroke-width="3" opacity="1" stroke-linecap="round"/>
+<path d="M405 455L492 514" fill="none" stroke="#61bff0" stroke-width="11" opacity="0.18" stroke-linecap="round"/>
+<circle cx="405" cy="455" r="13" fill="#1e69b1" stroke="#fff" stroke-width="2"/>
+<circle cx="492" cy="514" r="11" fill="#2b78bd" stroke="#fff" stroke-width="2"/>
+<circle cx="318" cy="514" r="11" fill="#d69a40" stroke="#fff" stroke-width="2"/>
+<text x="113" y="462" class="level">158</text>
+<path d="M405 650L318 709" fill="none" stroke="#2b78bd" stroke-width="5" opacity="1" stroke-linecap="round"/>
+<path d="M405 650L492 709" fill="none" stroke="#a8bac9" stroke-width="3" opacity="1" stroke-linecap="round"/>
+<path d="M405 650L318 709" fill="none" stroke="#61bff0" stroke-width="11" opacity="0.18" stroke-linecap="round"/>
+<circle cx="405" cy="650" r="13" fill="#1e69b1" stroke="#fff" stroke-width="2"/>
+<circle cx="318" cy="709" r="11" fill="#2b78bd" stroke="#fff" stroke-width="2"/>
+<circle cx="492" cy="709" r="11" fill="#d69a40" stroke="#fff" stroke-width="2"/>
+<text x="113" y="657" class="level">1</text>
+<path d="M405 750L492 809" fill="none" stroke="#2b78bd" stroke-width="5" opacity="1" stroke-linecap="round"/>
+<path d="M405 750L318 809" fill="none" stroke="#a8bac9" stroke-width="3" opacity="1" stroke-linecap="round"/>
+<path d="M405 750L492 809" fill="none" stroke="#61bff0" stroke-width="11" opacity="0.18" stroke-linecap="round"/>
+<circle cx="405" cy="750" r="13" fill="#1e69b1" stroke="#fff" stroke-width="2"/>
+<circle cx="492" cy="809" r="11" fill="#2b78bd" stroke="#fff" stroke-width="2"/>
+<circle cx="318" cy="809" r="11" fill="#d69a40" stroke="#fff" stroke-width="2"/>
+<text x="113" y="757" class="level">0</text>
+<path d="M405 455L318 378" stroke="#2b78bd" stroke-width="3.5" stroke-dasharray="7 6" fill="none"/>
+<path d="M405 650L492 514" stroke="#2b78bd" stroke-width="3.5" stroke-dasharray="7 6" fill="none"/>
+<path d="M405 750L318 709" stroke="#2b78bd" stroke-width="3.5" stroke-dasharray="7 6" fill="none"/>
+<text x="272" y="432" class="bridge">WOTS</text>
+<text x="268" y="747" class="bridge">WOTS</text>
+<path d="M405 548L387 556" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M405 548L423 556" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M405 548L423 556" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round"/>
+<path d="M397 561L379 569" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M397 561L415 569" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M397 561L379 569" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round"/>
+<path d="M421 574L403 582" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M421 574L439 582" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M421 574L439 582" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round"/>
+<path d="M405 587L387 595" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M405 587L423 595" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M405 587L387 595" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round"/>
+<path d="M413 600L395 608" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M413 600L431 608" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M413 600L431 608" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round"/>
+<path d="M389 613L371 621" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M389 613L407 621" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M389 613L371 621" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round"/>
+<path d="M405 626L387 634" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M405 626L423 634" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round"/>
+<path d="M405 626L423 634" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round"/>
+<text x="613" y="607" class="repeat" text-anchor="end">⋮ 156 levels ⋮</text>
+<path d="M405 319L405 287" fill="none" stroke="#2b78bd" stroke-width="5" opacity="1" stroke-linecap="round"/>
+<circle cx="405" cy="281" r="15" fill="#173f70" stroke="#fff" stroke-width="2"/>
+<text x="443" y="287" class="label">public key = root₁₅₉</text>
+<text x="550" y="813" class="tiny">selected leaf</text>
+<path d="M492 818L492 830" fill="none" stroke="#2b78bd" stroke-width="3" opacity="1" stroke-linecap="round"/>
+<text x="492" y="845" class="tiny" text-anchor="middle">16 B secret preimage</text>
+<rect x="748" y="203" width="392" height="653" rx="14" fill="#f9fbfd" stroke="#d0e1ee"/>
+<text x="776" y="237" class="section">WHAT THE SIGNATURE CARRIES</text>
+<rect x="776" y="269" width="336" height="129" rx="10" fill="#eaf4fc" stroke="#a9cde8"/>
+<text x="798" y="300" class="cardhead">One bit per level</text>
+<text x="798" y="329" class="body">The low 160 bits of</text>
+<text x="798" y="352" class="formula">H(5, PK, message, randomizer)</text>
+<text x="798" y="377" class="body">choose the left or right leaf.</text>
+<path d="M776 423H1112" stroke="#d2dfeb"/>
+<text x="776" y="453" class="cardhead">159 upper trees</text>
+<text x="776" y="481" class="body">46 WOTS values sign the root below.</text>
+<text x="776" y="507" class="body">Hash their chain endpoints to get</text>
+<text x="776" y="533" class="body">the chosen leaf; add its sibling</text>
+<text x="776" y="559" class="body">to obtain this tree’s root.</text>
+<text x="776" y="596" class="metric">752 B per upper tree</text>
+<path d="M776 618H1112" stroke="#d2dfeb"/>
+<text x="776" y="648" class="cardhead">Bottom tree</text>
+<text x="776" y="678" class="body">Reveal one 16 B secret preimage;</text>
+<text x="776" y="704" class="body">hash it and combine the 16 B sibling.</text>
+<text x="776" y="741" class="metric">32 B bottom proof</text>
+<path d="M776 766H1112" stroke="#d2dfeb"/>
+<text x="776" y="799" class="cardhead">Check</text>
+<text x="776" y="827" class="body">The last root must equal the public key.</text>
+<line x1="60" y1="883" x2="1140" y2="883" stroke="#d2dfeb"/>
+<text x="60" y="917" class="section">SIGNATURE ON THE WIRE</text>
+<rect x="60" y="936" width="199" height="37" rx="5" fill="#d4eafa"/>
+<rect x="263" y="936" width="199" height="37" rx="5" fill="#bddbf3"/>
+<rect x="466" y="936" width="522" height="37" rx="5" fill="#a6c9e9"/>
+<text x="72" y="961" class="wire">32 B randomizer</text>
+<text x="275" y="961" class="wire">32 B bottom proof</text>
+<text x="482" y="961" class="wire">159 × 752 B upper proofs</text>
+<text x="1140" y="960" class="total" text-anchor="end">119,632 B total</text>
+<style>
+.title{font:700 32px Arial,sans-serif;fill:#17344e}.subtitle{font:16px Arial,sans-serif;fill:#556d80}.section{font:700 15px Arial,sans-serif;letter-spacing:1.3px;fill:#246ead}.hint{font:14px Arial,sans-serif;fill:#567084}.level{font:700 18px Arial,sans-serif;fill:#2a5e8d}.label{font:700 15px Arial,sans-serif;fill:#20496b}.tiny{font:13px Arial,sans-serif;fill:#536d82}.bridge{font:700 13px Arial,sans-serif;fill:#2b78bd}.repeat{font:italic 14px Arial,sans-serif;fill:#6b8191}.cardhead{font:700 19px Arial,sans-serif;fill:#234c6c}.body{font:15px Arial,sans-serif;fill:#35546b}.formula{font:700 14px Arial,sans-serif;fill:#245f99}.metric{font:700 17px Arial,sans-serif;fill:#2b70a6}.wire{font:700 15px Arial,sans-serif;fill:#173d61}.total{font:700 18px Arial,sans-serif;fill:#173d61}
+</style></svg>

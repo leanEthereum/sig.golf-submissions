@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1030">
+<title id="title">Selected path through the 160-level binary hypertree</title>
+<desc id="desc">A tower of binary Merkle trees. The bottom tree authenticates a 16-byte secret preimage. Each of 159 upper trees authenticates the previous root with a 46-chain WOTS signature. Blue branches show the selected path; amber leaves are siblings supplied in the signature. The top root is the public key.</desc>
+<rect width="1200" height="1030" rx="20" fill="#f5f9fc" />
+<rect x="30" y="30" width="1140" height="970" rx="18" fill="#fff" stroke="#cadbea" stroke-width="2" />
+<path d="M59 74h45" stroke="#2777be" stroke-width="5" stroke-linecap="round" />
+<text x="60" y="120" font-family="Arial, sans-serif" font-size="32" fill="#17344e" font-weight="700">One signature, one path through 160 trees</text>
+<text x="60" y="153" font-family="Arial, sans-serif" font-size="16" fill="#556d80">A stateless binary hypertree · selected branches in blue · supplied siblings in amber</text>
+<line x1="60" y1="178" x2="1140" y2="178" stroke="#d2dfeb" />
+<rect x="60" y="203" width="660" height="653" rx="14" fill="#f5f9fd" stroke="#d0e1ee" />
+<text x="85" y="237" font-family="Arial, sans-serif" font-size="15" fill="#246ead" font-weight="700">AUTHENTICATION PATH</text>
+<text x="85" y="260" font-family="Arial, sans-serif" font-size="14" fill="#567084">Read upward: dashed WOTS links sign a root into the tree above.</text>
+
+<path d="M405 319L318 378" fill="none" stroke="#2b78bd" stroke-width="5" opacity="1" stroke-linecap="round" />
+<path d="M405 319L492 378" fill="none" stroke="#a8bac9" stroke-width="3" opacity="1" stroke-linecap="round" />
+<path d="M405 319L318 378" fill="none" stroke="#61bff0" stroke-width="11" opacity="0.18" stroke-linecap="round" />
+<circle cx="405" cy="319" r="13" fill="#1e69b1" stroke="#fff" stroke-width="2" />
+<circle cx="318" cy="378" r="11" fill="#2b78bd" stroke="#fff" stroke-width="2" />
+<circle cx="492" cy="378" r="11" fill="#d69a40" stroke="#fff" stroke-width="2" />
+<text x="113" y="326" font-family="Arial, sans-serif" font-size="18" fill="#2a5e8d" font-weight="700">159</text>
+<path d="M405 455L492 514" fill="none" stroke="#2b78bd" stroke-width="5" opacity="1" stroke-linecap="round" />
+<path d="M405 455L318 514" fill="none" stroke="#a8bac9" stroke-width="3" opacity="1" stroke-linecap="round" />
+<path d="M405 455L492 514" fill="none" stroke="#61bff0" stroke-width="11" opacity="0.18" stroke-linecap="round" />
+<circle cx="405" cy="455" r="13" fill="#1e69b1" stroke="#fff" stroke-width="2" />
+<circle cx="492" cy="514" r="11" fill="#2b78bd" stroke="#fff" stroke-width="2" />
+<circle cx="318" cy="514" r="11" fill="#d69a40" stroke="#fff" stroke-width="2" />
+<text x="113" y="462" font-family="Arial, sans-serif" font-size="18" fill="#2a5e8d" font-weight="700">158</text>
+<path d="M405 650L318 709" fill="none" stroke="#2b78bd" stroke-width="5" opacity="1" stroke-linecap="round" />
+<path d="M405 650L492 709" fill="none" stroke="#a8bac9" stroke-width="3" opacity="1" stroke-linecap="round" />
+<path d="M405 650L318 709" fill="none" stroke="#61bff0" stroke-width="11" opacity="0.18" stroke-linecap="round" />
+<circle cx="405" cy="650" r="13" fill="#1e69b1" stroke="#fff" stroke-width="2" />
+<circle cx="318" cy="709" r="11" fill="#2b78bd" stroke="#fff" stroke-width="2" />
+<circle cx="492" cy="709" r="11" fill="#d69a40" stroke="#fff" stroke-width="2" />
+<text x="113" y="657" font-family="Arial, sans-serif" font-size="18" fill="#2a5e8d" font-weight="700">1</text>
+<path d="M405 750L492 809" fill="none" stroke="#2b78bd" stroke-width="5" opacity="1" stroke-linecap="round" />
+<path d="M405 750L318 809" fill="none" stroke="#a8bac9" stroke-width="3" opacity="1" stroke-linecap="round" />
+<path d="M405 750L492 809" fill="none" stroke="#61bff0" stroke-width="11" opacity="0.18" stroke-linecap="round" />
+<circle cx="405" cy="750" r="13" fill="#1e69b1" stroke="#fff" stroke-width="2" />
+<circle cx="492" cy="809" r="11" fill="#2b78bd" stroke="#fff" stroke-width="2" />
+<circle cx="318" cy="809" r="11" fill="#d69a40" stroke="#fff" stroke-width="2" />
+<text x="113" y="757" font-family="Arial, sans-serif" font-size="18" fill="#2a5e8d" font-weight="700">0</text>
+<line x1="405.0" y1="455.0" x2="399.7581742403611" y2="450.3606829483656" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="395.26518073209917" y1="446.38412547553605" x2="390.02335497246025" y2="441.74480842390165" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="405.0" y1="650.0" x2="408.7721454297648" y2="644.1033128914021" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="405.0" y1="750.0" x2="398.66791951699577" y2="747.0159160942164" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="393.240421960135" y1="744.458129889259" x2="386.90834147713076" y2="741.4740459834754" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="381.48084392026993" y1="738.916259778518" x2="375.1487634372657" y2="735.9321758727344" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="369.7212658804049" y1="733.374389667777" x2="363.3891853974007" y2="730.3903057619934" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="357.9616878405399" y1="727.832519557036" x2="351.6296073575357" y2="724.8484356512524" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="346.20210980067486" y1="722.2906494462951" x2="339.8700293176706" y2="719.3065655405114" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="334.44253176080986" y1="716.7487793355541" x2="328.1104512778056" y2="713.7646954297704" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="322.68295372094485" y1="711.2069092248131" x2="318.0" y2="709.0" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="412.0054129409918" y1="639.0490096554611" x2="415.77755837075665" y2="633.1523225468632" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="419.01082588198364" y1="628.0980193109222" x2="422.78297131174844" y2="622.2013322023242" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="426.0162388229754" y1="617.1470289663832" x2="429.78838425274023" y2="611.2503418577854" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="433.0216517639672" y1="606.1960386218443" x2="436.793797193732" y2="600.2993515132465" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="440.027064704959" y1="595.2450482773054" x2="443.79921013472386" y2="589.3483611687076" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="447.03247764595085" y1="584.2940579327665" x2="450.80462307571565" y2="578.3973708241687" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="454.03789058694264" y1="573.3430675882275" x2="457.81003601670744" y2="567.4463804796297" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="461.0433035279344" y1="562.3920772436887" x2="464.8154489576993" y2="556.4953901350908" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="468.0487164689263" y1="551.4410868991498" x2="471.8208618986911" y2="545.5443997905519" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="475.05412940991806" y1="540.4900965546109" x2="478.82627483968287" y2="534.593409446013" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="482.05954235090985" y1="529.539106210072" x2="485.83168778067466" y2="523.642419101474" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="489.0649552919017" y1="518.588115865533" x2="492.0" y2="514.0" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="385.53036146419834" y1="437.7682509510721" x2="380.2885357045594" y2="433.1289338994377" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="375.7955421962975" y1="429.15237642660816" x2="370.55371643665865" y2="424.51305937497375" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="366.0607229283967" y1="420.5365019021442" x2="360.8188971687578" y2="415.8971848505098" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="356.3259036604959" y1="411.92062737768026" x2="351.084077900857" y2="407.28131032604585" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="346.59108439259506" y1="403.3047528532163" x2="341.34925863295615" y2="398.6654358015819" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="336.85626512469423" y1="394.68887832875237" x2="331.6144393650553" y2="390.04956127711796" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><line x1="327.1214458567934" y1="386.0730038042884" x2="321.8796200971545" y2="381.433686752654" stroke="#2b78bd" stroke-width="3.5" stroke-linecap="round" /><text x="272" y="432" font-family="Arial, sans-serif" font-size="13" fill="#2b78bd" font-weight="700">WOTS</text>
+<text x="268" y="747" font-family="Arial, sans-serif" font-size="13" fill="#2b78bd" font-weight="700">WOTS</text>
+<path d="M405 548L387 556" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M405 548L423 556" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M405 548L423 556" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round" />
+<path d="M397 561L379 569" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M397 561L415 569" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M397 561L379 569" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round" />
+<path d="M421 574L403 582" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M421 574L439 582" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M421 574L439 582" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round" />
+<path d="M405 587L387 595" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M405 587L423 595" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M405 587L387 595" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round" />
+<path d="M413 600L395 608" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M413 600L431 608" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M413 600L431 608" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round" />
+<path d="M389 613L371 621" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M389 613L407 621" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M389 613L371 621" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round" />
+<path d="M405 626L387 634" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M405 626L423 634" fill="none" stroke="#9abbd6" stroke-width="1.5" opacity="0.62" stroke-linecap="round" />
+<path d="M405 626L423 634" fill="none" stroke="#2b78bd" stroke-width="2" opacity="0.72" stroke-linecap="round" />
+<text x="613" y="607" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#6b8191">⋮ 156 levels ⋮</text>
+<path d="M405 319L405 287" fill="none" stroke="#2b78bd" stroke-width="5" opacity="1" stroke-linecap="round" />
+<circle cx="405" cy="281" r="15" fill="#173f70" stroke="#fff" stroke-width="2" />
+<text x="443" y="287" font-family="Arial, sans-serif" font-size="15" fill="#20496b" font-weight="700">public key = root₁₅₉</text>
+<text x="550" y="813" font-family="Arial, sans-serif" font-size="13" fill="#536d82">selected leaf</text>
+<path d="M492 818L492 830" fill="none" stroke="#2b78bd" stroke-width="3" opacity="1" stroke-linecap="round" />
+<text x="492" y="845" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#536d82">16 B secret preimage</text>
+<rect x="748" y="203" width="392" height="653" rx="14" fill="#f9fbfd" stroke="#d0e1ee" />
+<text x="776" y="237" font-family="Arial, sans-serif" font-size="15" fill="#246ead" font-weight="700">WHAT THE SIGNATURE CARRIES</text>
+<rect x="776" y="269" width="336" height="129" rx="10" fill="#eaf4fc" stroke="#a9cde8" />
+<text x="798" y="300" font-family="Arial, sans-serif" font-size="19" fill="#234c6c" font-weight="700">One bit per level</text>
+<text x="798" y="329" font-family="Arial, sans-serif" font-size="15" fill="#35546b">The low 160 bits of</text>
+<text x="798" y="352" font-family="Arial, sans-serif" font-size="14" fill="#245f99" font-weight="700">H(5, PK, message, randomizer)</text>
+<text x="798" y="377" font-family="Arial, sans-serif" font-size="15" fill="#35546b">choose the left or right leaf.</text>
+<path d="M776 423H1112" stroke="#d2dfeb" />
+<text x="776" y="453" font-family="Arial, sans-serif" font-size="19" fill="#234c6c" font-weight="700">159 upper trees</text>
+<text x="776" y="481" font-family="Arial, sans-serif" font-size="15" fill="#35546b">46 WOTS values sign the root below.</text>
+<text x="776" y="507" font-family="Arial, sans-serif" font-size="15" fill="#35546b">Hash their chain endpoints to get</text>
+<text x="776" y="533" font-family="Arial, sans-serif" font-size="15" fill="#35546b">the chosen leaf; add its sibling</text>
+<text x="776" y="559" font-family="Arial, sans-serif" font-size="15" fill="#35546b">to obtain this tree’s root.</text>
+<text x="776" y="596" font-family="Arial, sans-serif" font-size="17" fill="#2b70a6" font-weight="700">752 B per upper tree</text>
+<path d="M776 618H1112" stroke="#d2dfeb" />
+<text x="776" y="648" font-family="Arial, sans-serif" font-size="19" fill="#234c6c" font-weight="700">Bottom tree</text>
+<text x="776" y="678" font-family="Arial, sans-serif" font-size="15" fill="#35546b">Reveal one 16 B secret preimage;</text>
+<text x="776" y="704" font-family="Arial, sans-serif" font-size="15" fill="#35546b">hash it and combine the 16 B sibling.</text>
+<text x="776" y="741" font-family="Arial, sans-serif" font-size="17" fill="#2b70a6" font-weight="700">32 B bottom proof</text>
+<path d="M776 766H1112" stroke="#d2dfeb" />
+<text x="776" y="799" font-family="Arial, sans-serif" font-size="19" fill="#234c6c" font-weight="700">Check</text>
+<text x="776" y="827" font-family="Arial, sans-serif" font-size="15" fill="#35546b">The last root must equal the public key.</text>
+<line x1="60" y1="883" x2="1140" y2="883" stroke="#d2dfeb" />
+<text x="60" y="917" font-family="Arial, sans-serif" font-size="15" fill="#246ead" font-weight="700">SIGNATURE ON THE WIRE</text>
+<rect x="60" y="936" width="199" height="37" rx="5" fill="#d4eafa" />
+<rect x="263" y="936" width="199" height="37" rx="5" fill="#bddbf3" />
+<rect x="466" y="936" width="522" height="37" rx="5" fill="#a6c9e9" />
+<text x="72" y="961" font-family="Arial, sans-serif" font-size="15" fill="#173d61" font-weight="700">32 B randomizer</text>
+<text x="275" y="961" font-family="Arial, sans-serif" font-size="15" fill="#173d61" font-weight="700">32 B bottom proof</text>
+<text x="482" y="961" font-family="Arial, sans-serif" font-size="15" fill="#173d61" font-weight="700">159 × 752 B upper proofs</text>
+<text x="1140" y="960" text-anchor="end" font-family="Arial, sans-serif" font-size="18" fill="#173d61" font-weight="700">119,632 B total</text>
+</svg>

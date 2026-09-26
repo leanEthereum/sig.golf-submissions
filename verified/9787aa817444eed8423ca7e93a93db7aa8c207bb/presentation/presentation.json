@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "summary": "A 160-level binary hypertree: one message-derived bit selects a leaf in each two-leaf tree. The bottom level authenticates a 16-byte secret preimage. At each of 159 upper levels, 46 base-8 WOTS chains sign the previous root; hashing the selected leaf with its sibling gives the next root. Verification accepts when the final root equals the 16-byte public key.",
+  "diagram": true,
+  "facts": [
+    {
+      "label": "Signature layout",
+      "value": "32 B randomizer + 32 B bottom proof + 159 × 752 B upper proofs = 119,632 B"
+    },
+    {
+      "label": "Path selection",
+      "value": "Low 160 bits of H(5, 16 zero bytes, message, randomizer); one bit per level. Signing never reads the public key"
+    },
+    {
+      "label": "WOTS encoding",
+      "value": "128-bit root → 43 base-8 digits + 3 checksum digits; 46 chains, 7 steps each"
+    },
+    {
+      "label": "Upper proof",
+      "value": "46 × 16 B chain values + one 16 B Merkle sibling"
+    },
+    {
+      "label": "Expansion",
+      "value": "Copies the signature to the witness; W = S = 119,632 B"
+    },
+    {
+      "label": "Verification sample",
+      "value": "10-run mean: 3,280,598.8 cycles, including the 468-cycle witness charge; certified maximum C = 5,618,226"
+    }
+  ],
+  "profile": {
+    "hashes": {
+      "384": 262776,
+      "512": 1600,
+      "6144": 1590,
+      "896": 10
+    },
+    "instructions": {
+      "ADD": 1350074,
+      "ADDI": 12074914,
+      "ANDI": 74740,
+      "BEQ": 342306,
+      "BNE": 1350214,
+      "HALT": 10,
+      "JAL": 270736,
+      "JALR": 4790,
+      "LBU": 73140,
+      "LD": 4205168,
+      "LUI": 6222800,
+      "SB": 73140,
+      "SD": 2998234,
+      "SLLI": 1276944,
+      "SRLI": 146320,
+      "SUB": 68370,
+      "XORI": 1600
+    },
+    "method": "10 accepting RISC-V runs; one fixed secret key, 10 distinct messages, SHA-256 test oracle",
+    "samples": 10
+  }
+}

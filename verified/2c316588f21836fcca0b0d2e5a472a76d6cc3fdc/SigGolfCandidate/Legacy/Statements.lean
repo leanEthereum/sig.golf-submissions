@@ -1,0 +1,43 @@
+import SigGolfCandidate.Legacy.Security
+
+namespace SigGolfCandidate.Legacy
+open OracleComp
+
+/-- Static admission: fixed object sizes, strict image-size limits, and nonoverlapping buffers below embedded data. -/
+def Submission.Admissible (submission : Submission) : Prop :=
+  submission.sizes.Valid ∧ ∀ phase, (submission.image phase).Valid submission.sizes submission.layout
+
+/-- An unfinished observation cannot satisfy this statement. The strict bound covers every typed input and every fixed oracle, including arbitrary caches, signatures, and witnesses. -/
+def Submission.Terminates (submission : Submission) : Prop :=
+  ∀ (hash : Hash) (phase : Phase) (input : Input submission.sizes phase),
+    let result := submission.runWith hash phase input
+    result.finished = true ∧ result.cycles < CYCLE_LIMIT
+
+/-- The same oracle must make the pipeline succeed for all messages. The secret key is universally quantified, not averaged. -/
+def Submission.Complete (submission : Submission) : Prop :=
+  ∀ secretKey, 1 - FAILURE ≤ Pr[fun summary => summary.allSucceed = true |
+    withRandomOracle (submission.allMessages secretKey)]
+
+/-- Exponential compression cost for an independent uniform message and random oracle. Failed phases are charged; unreached phases cost zero. -/
+def Submission.CompressionBounds (submission : Submission) : Prop :=
+  ∀ secretKey phase, phase ∈ Phase.budgeted →
+    OracleComp.EvalDist.expectedValue (submission.honestWorkload secretKey)
+      (fun result => ENNReal.ofReal (Real.rpow 2
+        ((result.costs phase : ℝ) / (phase.budget : ℝ)))) ≤ 2
+
+/-- Scored cycles cover successful honest pipelines: verification's RISC-V cycles plus the witness charge. Arbitrary inputs remain subject to the universal termination bound. -/
+def Submission.VerificationBound (submission : Submission) (C : Nat) : Prop :=
+  ∀ (hash : Hash) secretKey message,
+    let result := evalWithAnswerFn hash (submission.honest secretKey message)
+    result.success = true → result.verificationCycles ≤ C
+
+/-- The organizer-owned competition claim, parameterized by the exact four images, fixed sizes, shared layout, and claimed verification bound. The loader and interpreter enforce fixed-size outputs, memory limits, and fresh stateless executions. -/
+structure Certificate (submission : Submission) (C : Nat) : Prop where
+  admissible : submission.Admissible
+  termination : submission.Terminates
+  completeness : submission.Complete
+  compressionBounds : submission.CompressionBounds
+  security : submission.Secure
+  verificationBound : submission.VerificationBound C
+
+end SigGolfCandidate.Legacy

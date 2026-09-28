@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "summary": "SPHINCS+ variant with PORS+FP, a forced-pruning single-tree few-time signature: the full 256-bit digest gives a 34-bit index and 15 leaves of one height-14 tree; the signer grinds ρ until they are distinct with an octopus of ≤ 120 nodes. 5 layers (heights 11,6,6,6,5) of target-sum WOTS (42 chains, T = 182), cached height-11 top tree under a MAC, paired PRF secrets. Verify runs a stack machine on the expanded witness. S = 6,100, W = 6,348, K = 131,072 B, C = 11,907.",
+  "diagram": true,
+  "facts": [
+    {
+      "label": "Signature layout",
+      "value": "ρ 16 B + 15 sorted secrets 240 B + 120 auth slots 1,920 B + 5 layers 3,924 B = 6,100 B"
+    },
+    {
+      "label": "Message digest split",
+      "value": "Full 256-bit H(tw ‖ P ‖ ρ ‖ 0¹²⁸ ‖ m): idx 34 b ‖ 15 leaf indices × 14 b ‖ 12 unused bits"
+    },
+    {
+      "label": "PORS+FP admissibility",
+      "value": "Signer grinds ρ until the 15 indices are distinct and their octopus ≤ 120 nodes: p ≈ 2⁻⁹·⁷⁶, ≈ 870 tries"
+    },
+    {
+      "label": "PORS tree",
+      "value": "One height-14 tree (16,384 leaves) per idx; octopus = pruned auth set, read order, zero padded to 120"
+    },
+    {
+      "label": "Hypertree and WOTS",
+      "value": "5 layers, heights 11,6,6,6,5; target-sum WOTS, 42 chains of w = 3 bits, digit sum 182, counter c < 2²²"
+    },
+    {
+      "label": "Keygen cache (K = 131,072 B)",
+      "value": "Height-11 top tree: 4,094 nodes each ⊕ a PRF mask + 256-bit MAC; one PRF call yields two secrets"
+    },
+    {
+      "label": "Witness (W = 6,348 B)",
+      "value": "ρ ‖ π (slot codes) ‖ 15 secrets ‖ 29 segments: 8 B header a | 16·merge | 32·t + a nodes ‖ layers ‖ counters"
+    },
+    {
+      "label": "Verification cost",
+      "value": "9,784 + 17·folds + 2·(segments with folds) ≤ 11,882 proved, + 25 → C = 11,907; measured avg 11,834"
+    }
+  ],
+  "profile": {
+    "samples": 16,
+    "method": "16 random keys and 32-byte messages (seeded PRNG): ref.py keygen + sign, expand on the emulator, verify traced on vm.py; all accepted, 11,764–11,870 cycles, octopus 114–120",
+    "instructions": {
+      "ADDI": 16572,
+      "SD": 13542,
+      "LD": 12886,
+      "SB": 12320,
+      "SRLI": 5043,
+      "JAL": 4169,
+      "JALR": 4048,
+      "SW": 3315,
+      "SLLI": 3226,
+      "ADD": 2880,
+      "ANDI": 2249,
+      "BLT": 1146,
+      "BGE": 1040,
+      "LUI": 976,
+      "LBU": 704,
+      "AND": 640,
+      "BNE": 579,
+      "OR": 464,
+      "XORI": 224,
+      "BGEU": 224,
+      "BEQ": 150,
+      "LWU": 96,
+      "ORI": 64,
+      "SUB": 64,
+      "BLTU": 16,
+      "XOR": 16,
+      "HALT": 16
+    },
+    "hashes": {
+      "512": 11955,
+      "5632": 80
+    }
+  }
+}

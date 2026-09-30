@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "summary": "SPHINCS+ variant with 16-byte hashes and P = 0. A 184-bit message digest (the signer grinds ρ until its last 10 bits are zero) yields 14 FORS+C leaf indices and a 34-bit hypertree index. Five layers of WOTS target-sum signatures (42 chains, digit sum 183) and Merkle paths (heights 11,6,6,6,5) authenticate the FORS key to the 16-byte root. Keygen caches the height-11 top tree as masked nodes under a 256-bit MAC; each PRF call yields two 16-byte secrets. Verification: a constant 11,887 cycles.",
+  "diagram": true,
+  "facts": [
+    {
+      "label": "Signature layout",
+      "value": "ρ 16 B + FORS 14 × 176 = 2,464 B + 5 layers × (4 B counter + 42 × 16 B + h × 16 B) = 3,924 B → 6,404 B"
+    },
+    {
+      "label": "Digest and FORS+C",
+      "value": "184-bit digest = idx (34 b) ‖ u₀…u₁₃ (10 b each) ‖ 10 zero bits; 14 trees of height 10, 176 B each"
+    },
+    {
+      "label": "Hypertree",
+      "value": "5 layers, heights 11,6,6,6,5 = 34-bit index; layer 4 signs the FORS key; layer 0 = cached top tree, root = pk"
+    },
+    {
+      "label": "WOTS encoding",
+      "value": "Target sum, w = 3: H(tw ‖ P ‖ M ‖ LE32 c) → 42 digits of 3 bits summing to 183; c < 2²², no checksum"
+    },
+    {
+      "label": "Keygen cache",
+      "value": "128 KiB: 4,094 top-tree nodes (levels 0–10) each ⊕ a PRF mask + 256-bit MAC keyed by the seed"
+    },
+    {
+      "label": "Paired PRF secrets",
+      "value": "One H(tw ‖ P ‖ S) call → 32 B = two 16 B secrets: WOTS chains 2k, 2k+1 and FORS leaves 2k, 2k+1"
+    },
+    {
+      "label": "Witness expansion",
+      "value": "Fixed byte permutation, W = 6,404 B: the 5 counters move to bytes 6,384–6,403 so all 16-byte items are 8-aligned"
+    },
+    {
+      "label": "Verification cost",
+      "value": "11,887 cycles on every accepting run + ⌈6,404 / 256⌉ = 26 → C = 11,913; 755 HASH calls, 809 blocks"
+    }
+  ],
+  "profile": {
+    "samples": 16,
+    "method": "16 random keys and 32-byte messages (seeded PRNG): ref.py keygen (pk + cache), sign with the cache, expand on the emulator, verify traced on vm.py; all accepted at 11,887 cycles",
+    "instructions": {
+      "ADDI": 20456,
+      "SW": 14816,
+      "SD": 13680,
+      "LD": 13072,
+      "SRLI": 4912,
+      "SLLI": 3456,
+      "JAL": 3368,
+      "JALR": 3360,
+      "ADD": 2880,
+      "ANDI": 1888,
+      "BLT": 1518,
+      "BGE": 1346,
+      "LUI": 896,
+      "AND": 400,
+      "OR": 192,
+      "BNE": 128,
+      "SUB": 128,
+      "LWU": 96,
+      "BEQ": 16,
+      "XOR": 16,
+      "HALT": 16
+    },
+    "hashes": {
+      "512": 11968,
+      "1024": 16,
+      "2048": 16,
+      "5632": 80
+    }
+  }
+}

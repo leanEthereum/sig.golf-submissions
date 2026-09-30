@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "summary": "SPHINCS+ variant with 16-byte hashes and P = 0. A 184-bit message digest (the signer grinds ρ until its last 10 bits are zero) yields 14 FORS+C leaf indices and a 34-bit hypertree index. The 14 FORS roots form the FORS key; seven layers of WOTS target-sum signatures (42 chains, digit sum 170) and Merkle paths (heights 5,5,5,5,5,5,4) authenticate it to the 16-byte public root. Honest verification costs a constant 18,357 cycles.",
+  "diagram": true,
+  "facts": [
+    {
+      "label": "Signature layout",
+      "value": "ρ 16 B + FORS 14 × 176 = 2,464 B + 7 layers × (4 B counter + 42 × 16 B + h × 16 B) = 5,276 B → 7,756 B"
+    },
+    {
+      "label": "Message digest split",
+      "value": "184 bits of H(tw ‖ P ‖ ρ ‖ 0¹²⁸ ‖ m): bits 0–33 idx, 34–173 u₀…u₁₃ (10 bits each), 174–183 must be 0"
+    },
+    {
+      "label": "FORS+C",
+      "value": "14 trees of height 10 (15th index group pinned to 0); per tree 16 B secret + 10 × 16 B siblings = 176 B"
+    },
+    {
+      "label": "Hypertree",
+      "value": "7 layers, heights 5,5,5,5,5,5,4 = 34-bit index; layer 6 (bottom) signs the FORS key, layer 0 root = pk"
+    },
+    {
+      "label": "WOTS encoding",
+      "value": "Target sum, w = 3: H(tw ‖ P ‖ M ‖ LE32 c) → 42 digits of 3 bits summing to 170; c < 2²⁰, no checksum"
+    },
+    {
+      "label": "Public key",
+      "value": "16 B hypertree root; public parameter P = 0 (no seed); secret key = 32-byte master seed"
+    },
+    {
+      "label": "Witness expansion",
+      "value": "Fixed byte permutation, W = 7,756 B: the 7 counters move to bytes 7,728–7,755 so all 16-byte items are 8-aligned"
+    },
+    {
+      "label": "Verification cost",
+      "value": "18,357 cycles on every accepting run + ⌈7,756 / 256⌉ = 31 → C = 18,388; 1,072 HASH calls, 1,146 blocks"
+    }
+  ],
+  "profile": {
+    "samples": 16,
+    "method": "16 random keys and 32-byte messages (seeded PRNG): ref.py keygen+sign, expand on the emulator, verify traced on vm.py; all 16 accepted at 18,357 cycles each",
+    "instructions": {
+      "SD": 37696,
+      "ADDI": 32463,
+      "SW": 20752,
+      "BGEU": 15948,
+      "LD": 15840,
+      "SRLI": 5728,
+      "SLLI": 5488,
+      "JAL": 4213,
+      "ANDI": 3216,
+      "XORI": 2784,
+      "ADD": 1008,
+      "LUI": 560,
+      "AND": 560,
+      "OR": 336,
+      "BNE": 160,
+      "LWU": 128,
+      "BLT": 112,
+      "BEQ": 16,
+      "HALT": 16
+    },
+    "hashes": {
+      "512": 17008,
+      "1024": 16,
+      "2048": 16,
+      "5632": 112
+    }
+  }
+}
